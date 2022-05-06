@@ -50,15 +50,30 @@ Address:
 12th Floor, Vishwaroop IT Park, S Pranavanandji Marg, Sector 30A, Vashi, Navi Mumbai, Maharashtra 400705
    Audio customer care number: +91)9555-602-502 ,Boult Audio customer care email: complaints@boultaudio.com OTHER QUERIES info@boultaudio.com  (+91)9555-602-502"""
 
-j = 1
-y = re.split("\s",str)
-#x = [i for i in y if re.findall("@",i) == ["@"]]
-#print(x)
-for i in y:
-	if re.findall("@",i) == ["@"]:
-		with open("email.txt","a") as f:
-			f.write(f"Email{j} : {i}\n")
-			j +=1
-		
-with open("email.txt","r") as f:
-	print(f.read())
+
+
+#if __name__ == '__main__':
+	#j = 1
+	#y = re.split("\s",str)
+	#for i in y:
+	#	if re.findall("@",i) == ["@"]:
+	#		with open("email.txt","a") as f:
+	#			f.write(f"Email{j} : {i}\n")
+			#	j +=1
+			
+	#with open("email.txt","r") as f:
+	#	print(f.read())
+
+
+#Other way to Extract email
+if __name__ == '__main__':
+	email = re.findall("[a-z0-9A-Z_.&%]+@[a-zA-Z0-9_&%]+[.][a-zA-Z]+",str)
+	j = 1
+	#for i in email:
+		#with open("email.txt","a") as f:
+			#f.write(f"Email {j} : {i}\n")
+		#	j +=1
+			
+	with open("email.txt","r") as f:
+		print(f.read())
+
